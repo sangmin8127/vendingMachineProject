@@ -1,6 +1,6 @@
 const products = [
-  { name: "아이스 아메리카노", price: 1500, url: "./src/img/imgCoffee01.png" },
-  { name: "뜨뜻한 아메리카노", price: 1500, url: "./src/img/imgCoffee02.png"  },
+  { name: "Ice 아메리카노", price: 1500, url: "./src/img/imgCoffee01.png" },
+  { name: "Hot 아메리카노", price: 1500, url: "./src/img/imgCoffee02.png"  },
   { name: "카페라떼", price: 2000, url: "./src/img/imgCoffee03.png"  },
   { name: "카라멜 마끼아또", price: 2000, url: "./src/img/imgCoffee04.png"  },
   { name: "카페모카", price: 2500, url: "./src/img/imgCoffee05.png"  },
@@ -26,11 +26,11 @@ for (let i = 0; i < products.length; i++) {
   console.log("제품가격 : ", product.price);
   console.log("제품이미지 : ", product.url);
   productWraps.innerHTML +=
-    `<div class="product btn--product">
-    <img src="` + product.url + `" alt="아메리카노">
-    <p class="productName">` + product.name + `</p>
-    <div class="productPrice">` + product.price + `원</div>
-    </div>`  
+  `<div class="product btn--product" onclick="productBtn(this)">
+  <img class="productImg" src="` + product.url + `" alt="상품이미지">
+  <p class="productName">` + product.name + `</p>
+  <div class="productPrice">` + product.price + `원</div>
+  </div>`  
 };
 
 // 유저이름 & 유저금액 보여줌
@@ -46,3 +46,38 @@ for (let i = 0; i < user.length; i++) {
   userWraps.innerHTML = users.name;
   moneyWraps.innerHTML = users.money;
 };
+
+// 상품 클릭시 아래 선택상품에 제품명, 가격 노출.
+// 이미 뿌려진 상품들이 클릭되면 onclick="productBtn(this)" 함수 실행됨.
+productChioceName.innerHTML = "";
+productChiocePrice.innerHTML = "";
+
+function productBtn(element) {
+  proImg = element.querySelector('.productImg').src;
+  proName = element.querySelector('.productName').innerHTML;
+  proPrice = element.querySelector('.productPrice').innerHTML;
+  console.log("this :", proImg, proName, proPrice);
+  productChioceImg.src = proImg;
+  productChioceName.innerHTML = proName;
+  productChiocePrice.innerHTML = proPrice;
+};
+
+// 금액버튼 클릭 시 금액합산해서 보여줌.
+let sum = 0;
+function calc(button) {
+	if(button) {
+		sum+= parseInt(button.value);		
+  }
+	else {
+		sum-= button.value;
+  }
+	productInsertPrice.innerHTML = sum + `원`;
+}
+//parseInt를 안하면 값이 더하기가 안되고 옆에 붙여넣기가 됨
+//this는 이 버튼을 클릭했을 때 참조값
+//function()에 들어갈 변수이름은 아무거나
+
+function reset() {
+  sum = 0;
+  productInsertPrice.innerHTML = sum + `원`;
+}
