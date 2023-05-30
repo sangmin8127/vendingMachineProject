@@ -176,8 +176,9 @@ section {
 
 #calculateWrap .moneyChanges {
   display: flex;
-  width:50%;
-  height: 100%;
+  align-items: center;
+  width:53%;
+  height: 17rem;
   padding: 2rem;
   border: 1rem solid #F78E1E;
   margin: 0 1.5rem 0 0;
@@ -186,7 +187,7 @@ section {
 
 #calculateWrap .moneyChanges #productChioceImg {
   display: block;
-  width: 3.5rem;
+  width: 5rem;
   margin: 0 2rem 0 0;
 }
 
@@ -215,8 +216,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
-  height: 100%;
+  width: 47%;
+  height: 17rem;
   padding: 2.4rem;
   border: 1rem solid #F78E1E;
   background-color: #fff;
@@ -259,5 +260,29 @@ section {
 }
 
 #buyList .listWrap .infoList p:nth-child(2) {
+  font-weight: 700;
+}
+
+.btn--purchase {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  border: 1rem solid #F78E1E;
+  border-radius: 2rem;
+  background-color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.btn--purchase:disabled {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  border: 1rem solid #e9e9e9;
+  border-radius: 2rem;
+  background-color: #fff;
+  font-size: 3rem;
   font-weight: 700;
 }

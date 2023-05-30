@@ -29,7 +29,7 @@ for (let i = 0; i < products.length; i++) {
   `<div class="product btn--product" onclick="productBtn(this)">
   <img class="productImg" src="` + product.url + `" alt="상품이미지">
   <p class="productName">` + product.name + `</p>
-  <div class="productPrice">` + product.price + `원</div>
+  <div class="productPrice">` + product.price + `</div>
   </div>`  
 };
 
@@ -62,22 +62,43 @@ function productBtn(element) {
   productChiocePrice.innerHTML = proPrice;
 };
 
-// 금액버튼 클릭 시 금액합산해서 보여줌.
+// 투입금액 버튼 클릭 시 금액합산해서 보여줌.
 let sum = 0;
+let proPrice = productChiocePrice.innerHTML;
+let proName = productChioceName.innerHTML;
+
 function calc(button) {
-	if(button) {
-		sum+= parseInt(button.value);		
+  if(button) {
+    sum+= parseInt(button.value);		
   }
 	else {
-		sum-= button.value;
+    sum-= button.value;
   }
-	productInsertPrice.innerHTML = sum + `원`;
+	if(sum <= proPrice) {
+    console.log("proPrice : ", proPrice);
+    productInsertPrice.innerHTML = sum;
+  } 
+  else {
+    alert("총합은 상품가격을 넘을 수 없습니다.");
+    sum -= parseInt(button.value);
+  }
+  if(sum == 2200) {
+    console.log("2200원입니다.")
+  }
+  else if(sum == 2200) {
+    console.log("2200원입니다.")
+  }
+  else if(proPrice == "" || proName == "") {
+    alert("상품을 먼저 선택해주세요.")
+  }
 }
 //parseInt를 안하면 값이 더하기가 안되고 옆에 붙여넣기가 됨
 //this는 이 버튼을 클릭했을 때 참조값
 //function()에 들어갈 변수이름은 아무거나
 
+// 초기화 버튼
 function reset() {
   sum = 0;
   productInsertPrice.innerHTML = sum + `원`;
 }
+

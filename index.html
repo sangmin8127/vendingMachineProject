@@ -45,8 +45,8 @@
         </div>
         <div>
           <p>선택상품 : <span id="productChioceName"></span></p>
-          <p>상품가격 : <span id="productChiocePrice">0원</span></p>
-          <p>투입금액 : <span id="productInsertPrice">0원</span></p>
+          <p>상품가격 : <span id="productChiocePrice">0</span>원</p>
+          <p>투입금액 : <span id="productInsertPrice">0</span>원</p>
         </div>
       </div>
       <div class="infoTxt box-round">
@@ -58,7 +58,7 @@
     </section>
     
     <section>
-      구매하기
+      <button type="button"  class="btn--purchase">구매하기</button>
     </section>
 
     <!-- 자판기 하단 구매한 제품 리스트 노출영역 -->
@@ -99,16 +99,6 @@
     <div id="info"></div>
   </div>
 
-  <script>
-    function btn(element) {
-      var info = document.getElementById("info");
-      let nums = element.querySelector('.cash').innerHTML;
-      console.log(nums);
-      var num = parseInt(nums);
-      console.log(num);
-      info.innerHTML = parseInt(info.innerHTML) + num;
-    }
-  </script>
 </body>
 
 </html>
