@@ -165,28 +165,49 @@ section {
 #calculateWrap {
   display: flex;
   position: relative;
+  width: 100%;
+}
+@media screen and (max-width: 47.5rem) {
+  #calculateWrap {
+    display: block;
+    position: relative;
+  }
 }
 
 #calculateWrap .moneyChanges {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  padding: 3rem;
+  width:53%;
+  height: 17rem;
+  padding: 2rem;
   border: 1rem solid #F78E1E;
-  margin: 0 .5rem 0 0;
+  margin: 0 1.5rem 0 0;
   background-color: #fff;
 }
 
-#calculateWrap .moneyChanges p {
-  font-size: 2.5rem;
-  font-weight: 400;
-  color: #F78E1E;
+#calculateWrap .moneyChanges #productChioceImg {
+  display: block;
+  width: 5rem;
+  margin: 0 2rem 0 0;
 }
 
-#calculateWrap .moneyChanges p span {
-  font-size: 3.5rem;
+#calculateWrap .moneyChanges p {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #F78E1E;
+  margin: .5rem 0;
+}
+
+#calculateWrap .moneyChanges p:nth-child(3) span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  margin: .5rem 0;
+}
+
+#calculateWrap .moneyChanges p #productChioceName,
+#calculateWrap .moneyChanges p #productChiocePrice {
+  font-size: 2rem;
   font-weight: 700;
   color: #000;
 }
@@ -195,9 +216,9 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  padding: 3rem;
+  width: 47%;
+  height: 17rem;
+  padding: 2.4rem;
   border: 1rem solid #F78E1E;
   background-color: #fff;
   font-size: 2rem;
@@ -209,12 +230,59 @@ section {
 /* 자판기 하단 구매한 제품 리스트 노출영역 */
 
 #buyList {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   width: 100%;
   height: 100%;
   padding: 3rem;
   border: 1rem solid #F78E1E;
   background-color: #fff;
+}
+
+#buyList .txt {
+  display: block;
+  position: inherit;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  padding: 0 0 2rem 0;
+}
+
+#buyList .listWrap {
+  border-bottom: 1px solid #e9e9e9;
+  border-top: 1px solid #e9e9e9;
+}
+
+#buyList .listWrap .infoList {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  margin: 1.5rem;
+}
+
+#buyList .listWrap .infoList p:nth-child(2) {
+  font-weight: 700;
+}
+
+.btn--purchase {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  border: 1rem solid #F78E1E;
+  border-radius: 2rem;
+  background-color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.btn--purchase:disabled {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  border: 1rem solid #e9e9e9;
+  border-radius: 2rem;
+  background-color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
 }
