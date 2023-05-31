@@ -75,7 +75,7 @@ function calc(button) {
     sum-= button.value;
   }
 	if(sum <= proPrice) {
-    console.log("proPrice : ", proPrice);
+    console.log("상품 가격에 맞게 투입하셨습니다. 구매하기 버튼 활성화!! : ", proPrice);
     productInsertPrice.innerHTML = sum;
   } 
   else {
