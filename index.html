@@ -14,18 +14,44 @@
 
 <body>
   <div class="container">
-    <h1 class="font-bold">미스터브리즈커피 온라인 Coffee 자판기</h1>
-    <section id="header" class="box-round">
-      <div class="productWrap">
+    <h1 class="font-bold">미스터브리즈커피 Coffee 자판기</h1>
+    <section id="header">
+
+      <div class="productWrap box-round">
         <!-- 자판기 상단 제품 노출영역 -->
       </div>
+
+      <div id="calculateWrap" class="box-round">
+        <div class="moneyChanges box-round">
+          <div>
+            <img id="productChioceImg" src="./src/img/imgCoffee01.png" alt="상품이미지">
+          </div>
+          <div>
+            <p>선택상품 : <span id="productChioceName"></span></p>
+            <p>상품가격 : <span id="productChiocePrice">0</span>원</p>
+            <p>투입금액 : <span id="productInsertPrice">0</span>원</p>
+          </div>
+        </div>
+
+        <div id="infoTxt" class="infoTxtWrap box-round">
+          금액을 투입해 주세요.
+          <!--
+          금액을 더 넣어주세요.<br>
+          상품이 준비되었습니다.<br>
+          -->
+        </div>
+
+        <button disabled type="button" class="btn--purchase">구매하기</button>
+        
+      </div>
+
     </section>
 
     <section id="priceButtons" class="box-round">
       <div class="currentCashed">
         <p>
           <!-- 자판기 구매 제품 가격버튼 노출영역 -->
-          <span class="user"></span>님 현재 잔액 : <span class="money"></span>원
+          투입 금액 : <span class="insertMoney"></span>원
         </p>
         <p>선택하신 상품을 확인하시고 아래 금액에 맞게 투입해 주세요.</p>
       </div>
@@ -35,30 +61,6 @@
         <button type="button" class="btn--cashes" value="100" onclick="calc(this)">100원</button>
         <button type="button" class="btn--cashes" value="0" onclick="reset()">초기화</button>
       </div>
-    </section>
-
-    <!-- 자판기 구매 제품 가격 & 안내 텍스트 노출영역 -->
-    <section id="calculateWrap" class="box-round">
-      <div class="moneyChanges box-round">
-        <div>
-          <img id="productChioceImg" src="./src/img/imgCoffee01.png" alt="상품이미지">
-        </div>
-        <div>
-          <p>선택상품 : <span id="productChioceName"></span></p>
-          <p>상품가격 : <span id="productChiocePrice">0</span>원</p>
-          <p>투입금액 : <span id="productInsertPrice">0</span>원</p>
-        </div>
-      </div>
-      <div class="infoTxt box-round">
-        금액을 투입해 주세요.<br>
-        금액을 더 넣어주세요.<br>
-        상품이 준비되었습니다.<br>
-        상품을 선택해주세요.<br>
-      </div>
-    </section>
-    
-    <section>
-      <button type="button"  class="btn--purchase">구매하기</button>
     </section>
 
     <!-- 자판기 하단 구매한 제품 리스트 노출영역 -->
